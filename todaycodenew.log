@@ -1,0 +1,229 @@
+var a;
+undefined
+typeof a;
+'undefined'
+a = 100;
+100
+typeof a;
+'number'
+a= 100.20;
+100.2
+typeof a;
+'number'
+a=10000000000;
+10000000000
+typeof a;
+'number'
+a=1;
+1
+typeof a;
+'number'
+a='Amit';
+'Amit'
+typeof a;
+'string'
+a="Amit";
+'Amit'
+typeof a;
+'string'
+a='A';
+'A'
+typeof a;
+'string'
+a= 100;
+100
+typeof a;
+'number'
+var b = 200;
+undefined
+var c = a + b;
+undefined
+c;
+300
+typeof c;
+'number'
+b = "One";
+'One'
+a;
+100
+c = a + b;
+'100One'
+100 + undefined;
+NaN
+typeof NaN;
+'number'
+NaN + NaN;
+NaN
+100 + NaN;
+NaN
+100 / 0;
+Infinity
+typeof Infinity;
+'number'
+c = 100 + undefined;
+NaN
+isNaN(c);
+true
+isNaN(c)?0:c;
+0
+isFinite(100/0);
+false
+isFinite(100/0)?100: 0;
+0
+a = 100;
+100
+b = "100";
+'100'
+typeof a;
+'number'
+typeof b;
+'string'
+a + b;
+'100100'
+a + parseInt(b);
+200
+a;
+100
+b;
+'100'
+a + b;
+'100100'
+a + parseInt(b);
+200
+"Amit " + " Srivastava";
+'Amit  Srivastava'
+"Amit " - " Srivastava";
+NaN
+a - b;
+0
+a *b;
+10000
+a/b;
+1
+2 * 2;
+4
+2 ** 5;
+32
+a = "Amit";
+'Amit'
+typeof a;
+'string'
+b = b + 20;
+'10020'
+var a = 10;
+undefined
+var b = a;
+undefined
+a;
+10
+b;
+10
+b = b + 10;
+20
+b;
+20
+a;
+10
+var price = 12345678;
+undefined
+price.toLocaleString('hi-IN');
+'1,23,45,678'
+var t = price.toLocaleString('hi-IN');
+undefined
+price;
+12345678
+var name = "Amit";
+undefined
+name.toUpperCase();
+'AMIT'
+name;
+'Amit'
+name = 'Amit';
+'Amit'
+name ="Amit";
+'Amit'
+name = "ghdfjkghjkdfhgjkhdfkghdkhjfgd \n hfkjsdhgdkjhgkdfgj \n fgdksjhgjkfg \n";
+'ghdfjkghjkdfhgjkhdfkghdkhjfgd \n hfkjsdhgdkjhgkdfgj \n fgdksjhgjkfg \n'
+ name;
+'ghdfjkghjkdfhgjkhdfkghdkhjfgd \n hfkjsdhgdkjhgkdfgj \n fgdksjhgjkfg \n'
+console.log(name); 
+VM2484:1 ghdfjkghjkdfhgjkhdfkghdkhjfgd 
+ hfkjsdhgdkjhgkdfgj 
+ fgdksjhgjkfg 
+
+undefined
+name = `mnbfsjdsjkgh
+hfjksd
+hfjks
+hfdjk
+fjskd`
+'mnbfsjdsjkgh\nhfjksd\nhfjks\nhfdjk\nfjskd'
+console.log(name); 
+VM2615:1 mnbfsjdsjkgh
+hfjksd
+hfjks
+hfdjk
+fjskd
+undefined
+var a = 100;
+undefined
+var b = 200;
+undefined
+var c = a + b;
+undefined
+c;
+300
+console.log("A is  "+a+" And B is "+b+" And C is "+c);
+VM3114:1 A is  100 And B is 200 And C is 300
+undefined
+console.log(`A is  ${a} And B is ${b} And C is ${c}`);
+VM3205:1 A is  100 And B is 200 And C is 300
+undefined
+var q = true;
+undefined
+typeof q;
+'boolean'
+true + 100;
+101
+true + true;
+2
+true + false;
+1
+var r = Number.MAX_SAFE_INTEGER;
+undefined
+r;
+9007199254740991
+r++;
+9007199254740991
+r++;
+9007199254740992
+r++;
+9007199254740992
+r++;
+9007199254740992
+r++;
+9007199254740992
+r++;
+9007199254740992
+r++;
+9007199254740992
+r++;
+9007199254740992
+r++;
+9007199254740992
+var f = 9007199254740992n;
+undefined
+typeof f;
+'bigint'
+f = f + 6784687657843785n;
+15791886912584777n
+1000n + 333;
+VM3584:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:7
+(anonymous) @ VM3584:1
+var w  = BigInt("5325345353453424242342343242343242343242");
+undefined
+w;
+5325345353453424242342343242343242343242n
+typeof w;
+'bigint'
