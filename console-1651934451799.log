@@ -1,0 +1,123 @@
+var a = "Amit";
+undefined
+a = 'Amit';
+'Amit'
+a= "Amit";
+'Amit'
+typeof a;
+'string'
+typeof (a);
+'string'
+typeof ((((((a))))));
+'string'
+a = `gkdfjgkldfjgkljfgjldf
+gjhdfkghjfdkjg
+gdljhgkhdklgjdf
+gdlfjgkhdfjkgf`;
+'gkdfjgkldfjgkljfgjldf\ngjhdfkghjfdkjg\ngdljhgkhdklgjdf\ngdlfjgkhdfjkgf'
+a;
+'gkdfjgkldfjgkljfgjldf\ngjhdfkghjfdkjg\ngdljhgkhdklgjdf\ngdlfjgkhdfjkgf'
+console.log(a);
+VM375:1 gkdfjgkldfjgkljfgjldf
+gjhdfkghjfdkjg
+gdljhgkhdklgjdf
+gdlfjgkhdfjkgf
+undefined
+typeof console;
+'object'
+typeof console.log
+'function'
+var w = 100;
+undefined
+typeof w;
+'number'
+w = true;
+true
+typeof w;
+'boolean'
+w = "Amit";
+'Amit'
+typeof w;
+'string'
+var arr= [];
+undefined
+typeof arr;
+'object'
+arr = [10,"Amit",true, [90,100,"99"]];
+(4) [10, 'Amit', true, Array(3)]
+var arr2 = arr;
+undefined
+arr[0] = 10000;
+10000
+arr;
+(4) [10000, 'Amit', true, Array(3)]
+arr2;
+(4) [10000, 'Amit', true, Array(3)]
+typeof arr2;
+'object'
+arr.length;
+4
+arr.push(8888);
+5
+arr;
+(5) [10000, 'Amit', true, Array(3), 8888]
+arr2;
+(5) [10000, 'Amit', true, Array(3), 8888]
+arr2[1] = "Ramesh";
+'Ramesh'
+arr;
+(5) [10000, 'Ramesh', true, Array(3), 8888]
+arr2;
+(5) [10000, 'Ramesh', true, Array(3), 8888]
+var arr3 = [...arr]; 
+undefined
+arr3;
+(5) [10000, 'Ramesh', true, Array(3), 8888]
+arr;
+(5) [10000, 'Ramesh', true, Array(3), 8888]
+arr == arr2;
+true
+arr == arr3;
+false
+arr3[0] =9999;
+9999
+arr3;
+(5) [9999, 'Ramesh', true, Array(3), 8888]
+arr;
+(5) [10000, 'Ramesh', true, Array(3), 8888]
+arr3 = null;
+null
+arr2;
+(5) [10000, 'Ramesh', true, Array(3), 8888]
+typeof arr2;
+'object'
+arr3;
+null
+typeof arr3;
+'object'
+var t ;
+undefined
+typeof t;
+'undefined'
+typeof null;
+'object'
+typeof undefined;
+'undefined'
+undefined == null;
+true
+10 == "10";
+true
+undefined === null;
+false
+1000 + null;
+1000
+null + null;
+0
+1000 + undefined;
+NaN
+var f = 10;
+undefined
+typeof f;
+'number'
+f= "Amit";
+'Amit'
