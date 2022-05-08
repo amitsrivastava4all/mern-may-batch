@@ -1,0 +1,17 @@
+A variable in JS can store Function Reference.
+A Function can have Arguments (Variables). 
+Variable can have Function 
+Function can have Function as an Argument.
+So We use a term for this is called CallBack Function.
+
+A Function can return a Function. Because a variable can have a function.
+
+Function can have variables (Local variables) and Local Variables can have functions, Function can nest Functions.
+
+
+Blessing 
+With a Single Function we can do more things.
+
+C++/ Java/C# - Overloading
+
+Curse
