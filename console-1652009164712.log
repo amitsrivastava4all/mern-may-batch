@@ -1,0 +1,383 @@
+var a = 10;
+undefined
+typeof a;
+'number'
+a = "Amit";
+'Amit'
+typeof a;
+'string'
+var arr = [10,20,30];
+undefined
+typeof arr;
+'object'
+var a = "Amit";
+undefined
+typeof a;
+'string'
+var b = new String("Amit");
+undefined
+typeof b;
+'object'
+a;
+'Amit'
+b;
+String {'Amit'}
+var q = {}; 
+undefined
+typeof q;
+'object'
+arr;
+(3) [10, 20, 30]
+typeof arr;
+'object'
+arr instanceof Array;
+true
+b;
+String {'Amit'}
+b instanceof String;
+true
+b instanceof Array;
+false
+q;
+{}
+q instanceof Object;
+true
+typeof Object;
+'function'
+typeof Array;
+'function'
+typeof String;
+'function'
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+b;
+String {'Amit'}
+b instanceof String;
+true
+b instanceof Object;
+true
+q;
+{}[[Prototype]]: Object
+var emp = {};
+undefined
+emp.id =1011;
+1011
+emp.name = "ram";
+'ram'
+emp.salary = 8888;
+8888
+emp;
+{id: 1011, name: 'ram', salary: 8888}
+typeof emp;
+'object'
+emp.id;
+1011
+delete emp.salary;
+true
+emp;
+{id: 1011, name: 'ram'}
+emp.city = 'Delhi';
+'Delhi'
+emp;
+{id: 1011, name: 'ram', city: 'Delhi'}
+var player = {name:'Dhoni',6:55, 4:44,2:100};
+undefined
+player.name;
+'Dhoni'
+player.6;
+VM1996:1 Uncaught SyntaxError: Unexpected number
+player[6]
+55
+var k = "name";
+undefined
+player.k;
+undefined
+player[k];
+'Dhoni'
+player['no of fifty']=100;
+100
+player.no of fifty;
+VM2231:1 Uncaught SyntaxError: Unexpected identifier
+player['no of fifty'];
+100
+for(var key in player){
+    console.log(key);
+}
+VM2389:2 2
+VM2389:2 4
+VM2389:2 6
+VM2389:2 name
+VM2389:2 no of fifty
+undefined
+for(var key in player){
+    console.log(key , player[key]);
+}
+VM2468:2 2 100
+VM2468:2 4 44
+VM2468:2 6 55
+VM2468:2 name Dhoni
+VM2468:2 no of fifty 100
+undefined
+arr.forEach
+ƒ forEach() { [native code] }
+arr;
+(3) [10, 20, 30]
+for(var a of arr){
+    
+}
+undefined
+for(var i = 0; i<arr.length; i++){
+    console.log(arr[i]);
+}
+VM2756:2 10
+VM2756:2 20
+VM2756:2 30
+undefined
+for(var a of arr){
+   console.log(a); 
+}
+VM2803:2 10
+VM2803:2 20
+VM2803:2 30
+undefined
+function show(){
+    console.log(" i am Show ");
+}
+undefined
+show();
+VM3032:2  i am Show 
+undefined
+function show(){
+    console.log(" i am Show ");
+    return 10;
+    
+}
+undefined
+show();
+VM3102:2  i am Show 
+10
+typeof show;
+'function'
+var d = show;
+undefined
+d;
+ƒ show(){
+    console.log(" i am Show ");
+    return 10;
+    
+}
+typeof d;
+'function'
+d();
+VM3102:2  i am Show 
+10
+var dict = {10:20, name:'Amit'};
+undefined
+function add(a,b){
+        return a + b;
+}
+undefined
+add(10,20);
+30
+add("Amit","Srivastava");
+'AmitSrivastava'
+add(true, true);
+2
+add(true, 100);
+101
+add("Amit", 100);
+'Amit100'
+function add(){
+       console.log("I Call Always ");
+}
+undefined
+add();
+VM3939:2 I Call Always 
+undefined
+add(10,20,20,43,88);
+VM3939:2 I Call Always 
+undefined
+add([10,20,20],"hfdjkshkg",show,122, true, [10,[20,30]]);
+VM3939:2 I Call Always 
+undefined
+console.dir(add);
+VM4230:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM3939:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function add(){
+       console.log("I Call Always ", arguments.length, arguments instanceof Array);
+}
+undefined
+add();
+VM4478:2 I Call Always  0 false
+undefined
+add([10,20,20],"hfdjkshkg",show,122, true, [10,[20,30]]);
+VM4478:2 I Call Always  6 false
+undefined
+function add(){
+      // console.log("I Call Always ", arguments.length, arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add(10,20,30,40,50);
+150
+add(10,20);
+30
+add(10);
+10
+add();
+0
+add(10,20,30,"40",50);
+'604050'
+function add(){
+      // console.log("I Call Always ", arguments.length, arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length; i++){
+        sum = sum + parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(10,20,30,"40",50);
+150
+add(10,20,30,"amit",50);
+NaN
+parseInt("100");
+100
+parseInt("AMit");
+NaN
+isNaN(parseInt("AMit"));
+true
+isNaN(parseInt("AMit"))?0:111;
+0
+function add(){
+      // console.log("I Call Always ", arguments.length, arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length; i++){
+        sum = sum + isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+VM5296:5 Uncaught SyntaxError: Unexpected token ')'
+function add(){
+      // console.log("I Call Always ", arguments.length, arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length; i++){
+        sum = sum + isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(10,20,30,"amit",50);
+50
+function add(){
+      // console.log("I Call Always ", arguments.length, arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length; i++){
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(10,20,30,"amit",50);
+110
+function one(){
+    return 1;
+}
+undefined
+function two(){
+}
+undefined
+function two(){
+    return "2";
+}
+undefined
+add(1,2,one, two);
+3
+function add(){
+      // console.log("I Call Always ", arguments.length, arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length; i++){
+        if(typeof arguments[i] === 'function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(10,20,"30", one , two);
+63
+//add(10,20,"30", one , two,[1,2],[3,"4",one, two]);
+undefined
+function adder(...arg){
+    console.log("Rest Args ", args);
+}
+undefined
+adder(10,20,30,40,50);
+VM6233:2 Uncaught ReferenceError: args is not defined
+    at adder (<anonymous>:2:31)
+    at <anonymous>:1:1
+adder @ VM6233:2
+(anonymous) @ VM6297:1
+function adder(...args){
+    console.log("Rest Args ", args);
+}
+undefined
+adder(10,20,30,40,50);
+VM6308:2 Rest Args  (5) [10, 20, 30, 40, 50]
+undefined
+function adder(...args){
+    console.log("Rest Args ", args instanceof Array);
+}
+undefined
+adder(10,20,30,40,50);
+VM6410:2 Rest Args  true
+undefined
+function adder(a,b,c,d,...args){
+    console.log("Rest Args ", args instanceof Array, a,b,c,d);
+}
+undefined
+adder(10,20,30,40,50,90,100,44);
+VM6528:2 Rest Args  true 10 20 30 40
+undefined
+function adder(a,b,c,d,...args){
+    console.log("Rest Args ", args, a,b,c,d);
+}
+undefined
+adder(10,20,30,40,50,90,100,44);
+VM6673:2 Rest Args  (4) [50, 90, 100, 44] 10 20 30 40
+undefined
+function adder(...ss, a,b,c,d,...args){
+    console.log("Rest Args ", args, a,b,c,d);
+}
+VM6700:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+var arr = [10,20,30,40];
+undefined
+var arr2 =[90,100,101];
+undefined
+var arr3 = [arr, arr2];
+undefined
+arr3;
+(2) [Array(4), Array(3)]0: (4) [10, 20, 30, 40]1: (3) [90, 100, 101]length: 2[[Prototype]]: Array(0)
+arr.push(8888);
+5
+arr3;
+(2) [Array(5), Array(3)]0: (5) [10, 20, 30, 40, 8888]1: (3) [90, 100, 101]length: 2[[Prototype]]: Array(0)
+var arr4 = [...arr, ...arr2];
+undefined
+arr4;
+(8) [10, 20, 30, 40, 8888, 90, 100, 101]
+var obj = {id:1001, name:'Abcd'};
+undefined
+var obj2 = {salary:888, bonus:811, id: 1002};
+undefined
+var obj3 = {...obj, ...obj2};
+undefined
+obj3;
+{id: 1002, name: 'Abcd', salary: 888, bonus: 811}
