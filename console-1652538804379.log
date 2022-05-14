@@ -1,0 +1,159 @@
+show();
+function show(){
+    console.log("I am the Show Function ");
+}
+VM302:3 I am the Show Function 
+undefined
+window.show;
+ƒ show(){
+    console.log("I am the Show Function ");
+}
+show(); //window.show()
+VM302:3 I am the Show Function 
+undefined
+function disp(){
+    console.log('F Start ', f);
+    if(10>2){
+        var f = 100; // Hoisting
+    }
+    console.log('End ', f);
+}
+undefined
+disp();
+VM674:2 F Start  undefined
+VM674:6 End  100
+undefined
+function disp(){
+    console.log('F Start ', f);
+    var f = 200;
+    console.log('Now F is ',f);
+    if(10>2){
+        var f = 100; // Hoisting
+    }
+    var f = 1000;
+    console.log('End ', f);
+}
+undefined
+disp();
+VM881:2 F Start  undefined
+VM881:4 Now F is  200
+VM881:9 End  1000
+undefined
+adder();
+var adder = function(){
+    console.log('I am the Adder Fn ');
+}
+VM1123:1 Uncaught TypeError: adder is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM1123:1
+function Math(){
+    var add = function(){
+        
+    }
+    var sub = function(){
+        
+    }
+    return add,sub;
+}
+Math();
+ƒ (){
+        
+    }
+function Math(){
+    var add = function(){
+        console.log('I am the Add ');
+    }
+    var sub = function(){
+        console.log('I am the Sub ');
+    }
+    return add,sub;
+}
+Math();
+ƒ (){
+        console.log('I am the Sub ');
+    }
+function Math(){
+    var add = function(){
+        console.log('I am the Add ');
+    }
+    var sub = function(){
+        console.log('I am the Sub ');
+    }
+    return [add,sub];
+}
+Math();
+(2) [ƒ, ƒ]
+function Math(){
+    var add = function(){
+        console.log('I am the Add ');
+    }
+    var sub = function(){
+        console.log('I am the Sub ');
+    }
+    return [add,sub];
+}
+var e = Math();
+e[0]();
+VM1549:3 I am the Add 
+undefined
+function Math(){
+    var add = function(){
+        console.log('I am the Add ');
+    }
+    var sub = function(){
+        console.log('I am the Sub ');
+    }
+    return [add,sub];
+}
+var e = Math();
+e[1]();
+VM1562:6 I am the Sub 
+undefined
+function Math(a){
+    var add = function(x,y){
+        console.log('I am the Add ');
+        return a + x + y;
+    }
+    var sub = function(x,y){
+        console.log('I am the Sub ');
+        return a - x - y;
+    }
+    return [add,sub];
+}
+var e = Math(100);
+
+undefined
+e;
+(2) [ƒ, ƒ]
+e[0](10,20);
+VM1720:3 I am the Add 
+130
+e[0];
+ƒ (x,y){
+        console.log('I am the Add ');
+        return a + x + y;
+    }
+console.dir(e[0]);
+VM1854:1 ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1720:2[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Object[[Scopes]]: Scopes[0][[Scopes]]: Scopes[2]0: Closure (Math) {a: 100}1: Global {window: Window, self: Window, document: document, name: '', Math: ƒ, …}
+undefined
+function Math(a,b,c){
+    var add = function(x,y){
+        console.log('I am the Add ');
+        return a + x + y;
+    }
+    var sub = function(x,y){
+        console.log('I am the Sub ');
+        return a - x - y;
+    }
+    return [add,sub];
+}
+var e = Math(100);
+
+undefined
+console.dir(e[0]);
+VM1944:1 ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1880:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (Math) {a: 100}1: Global {window: Window, self: Window, document: document, name: '', Math: ƒ, …}
+undefined
+t++;
+VM1957:1 Uncaught ReferenceError: t is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1957:1
