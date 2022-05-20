@@ -1,0 +1,49 @@
+const adder = function(x,y){
+    return x + y;
+}
+arr = [88,22];
+const adder2 = (x,y)=>x + y;
+
+typeof adder2;
+adder2(10,20);
+function add(x,y){
+    return x + y;
+}
+function add(x,y){
+    console.log(this);
+    return x + y;
+}
+add(10,20);
+console.dir(add);
+const adder3 = (x,y)=>{
+    console.log(this);
+    return x+y;
+}
+adder3(10,20);
+console.dir(adder3);
+var w = new add(10,20);
+typeof w;
+var e = new adder3(1,2);
+var arr = [10,20,30,40,50];
+const printing = (element)=>console.log(element); 
+arr.forEach(printing);
+const printing = element=>console.log(element); 
+arr.forEach(printing);
+arr.forEach(element=>console.log(element));
+var newPrices = prices.map(price=>price + price * 0.18);
+prices.forEach((price, index)=>console.log(price, index));
+prices.forEach((price, index, a)=>console.log(price, index, a));
+prices.push(7777);
+prices.unshift(4444);
+prices.pop();
+prices.shift();
+prices.splice(1);
+prices = [90,100,200,455,666];
+prices.length = 2;
+prices.length = 0;
+prices = [90,100,200,455,666];
+prices.splice(1,2);
+prices.splice(1,0,4444);
+prices.splice(1,0,8,4,2,36);
+prices.splice(1,1,100000);
+prices.splice(1,1);
