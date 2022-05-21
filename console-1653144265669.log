@@ -1,0 +1,404 @@
+var arr = [10,20,30,40,50,60,10];
+undefined
+arr.pop();
+10
+arr.pop();
+60
+arr.pop();
+50
+arr.shift();
+10
+arr.shift();
+20
+arr;
+(2) [30, 40]
+var arr = [10,20,30,40,50,60,10];
+undefined
+arr.splice(2,1);
+[30]
+arr.splice(2,2);
+(2) [40, 50]
+arr.splice(2);
+(2) [60, 10]
+arr;
+(2) [10, 20]
+var arr = [10,20,30,40,50,60,10];
+undefined
+arr.splice(1,1,9999);
+[20]
+arr;
+(7) [10, 9999, 30, 40, 50, 60, 10]
+arr.splice(1,0,119999);
+[]
+arr;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr.map(e=>`Rs ${e.toLocaleString('hi-IN')}`);
+(8) ['Rs 10', 'Rs 1,19,999', 'Rs 9,999', 'Rs 30', 'Rs 40', 'Rs 50', 'Rs 60', 'Rs 10']
+var e = arr.map(e=>`Rs ${e.toLocaleString('hi-IN')}`);
+undefined
+e;
+(8) ['Rs 10', 'Rs 1,19,999', 'Rs 9,999', 'Rs 30', 'Rs 40', 'Rs 50', 'Rs 60', 'Rs 10']
+var d = arr.map(function(e){
+    return `Rs ${e.toLocaleString('hi-IN')}`;
+})
+undefined
+d;
+(8) ['Rs 10', 'Rs 1,19,999', 'Rs 9,999', 'Rs 30', 'Rs 40', 'Rs 50', 'Rs 60', 'Rs 10']
+var d = arr.map(e=>
+     `Rs ${e.toLocaleString('hi-IN')}`);
+undefined
+d;
+(8) ['Rs 10', 'Rs 1,19,999', 'Rs 9,999', 'Rs 30', 'Rs 40', 'Rs 50', 'Rs 60', 'Rs 10']
+arr.forEach(e=>console.log(e));
+VM1620:1 10
+VM1620:1 119999
+VM1620:1 9999
+VM1620:1 30
+VM1620:1 40
+VM1620:1 50
+VM1620:1 60
+VM1620:1 10
+undefined
+arr;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr.filter(e=>e>40);
+(4) [119999, 9999, 50, 60]
+var arr2 = [...arr];
+undefined
+arr2;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+var arr3 = arr.map(e=>e);
+undefined
+arr3;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr3 == arr;
+false
+var arr4 = arr3;
+undefined
+arr4== arr3;
+true
+var ff = arr.filter(e=>true);
+undefined
+ff;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+var gg = Array.from(arr3);
+undefined
+gg;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr3;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+gg == arr3;
+false
+arr.reduce((acc, ele)=> acc+ele, 0);
+130198
+arr;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr.reduce((acc, ele)=>{
+   if(ele>50){
+       acc.push(ele);
+   } 
+   return acc; 
+}, []);
+(3) [119999, 9999, 60]
+arr;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]0: 101: 1199992: 99993: 304: 405: 506: 607: 10length: 8[[Prototype]]: Array(0)
+arr.reduce((acc, ele)=>{
+    if(ele<=50){
+        acc.push(ele);
+    }
+}, []);
+VM3013:3 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:3:13
+    at Array.reduce (<anonymous>)
+    at <anonymous>:1:5
+(anonymous) @ VM3013:3
+(anonymous) @ VM3013:1
+arr.reduce((acc, ele)=>{
+    if(ele<=50){
+        acc.push(ele);
+    }
+    return acc;
+}, []);
+(5) [10, 30, 40, 50, 10]
+acc;
+VM3116:1 Uncaught ReferenceError: acc is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3116:1
+arr;
+(8) [10, 119999, 9999, 30, 40, 50, 60, 10]
+arr = arr.reduce((acc, ele)=>{
+    if(ele<=50){
+        acc.push(ele);
+    }
+    return acc;
+}, []);
+(5) [10, 30, 40, 50, 10]
+arr;
+(5) [10, 30, 40, 50, 10]
+arr = [90,100,200,40,4,60,77,1];
+(8) [90, 100, 200, 40, 4, 60, 77, 1]
+arr = arr.filter(e=>e<=50)
+(3) [40, 4, 1]
+arr;
+(3) [40, 4, 1]
+arr = [90,100,200,40,4,60,77,1];
+(8) [90, 100, 200, 40, 4, 60, 77, 1]
+arr.every(e=>e>50);
+false
+arr.some(e=>e>50);
+true
+arr;
+(8) [90, 100, 200, 40, 4, 60, 77, 1]0: 11: 1002: 2003: 44: 405: 606: 777: 90length: 8[[Prototype]]: Array(0)
+arr.sort();
+(8) [1, 100, 200, 4, 40, 60, 77, 90]
+arr.sort((first, second)=>first-second);
+(8) [1, 4, 40, 60, 77, 90, 100, 200]
+arr.sort((first, second)=>second-first);
+(8) [200, 100, 90, 77, 60, 40, 4, 1]
+var names = ["tim","kim","sim","vim","jim","rim"];
+undefined
+"tim".localeCompare("kim");
+1
+"kim".localeCompare("kim");
+0
+"kim".localeCompare("tim");
+-1
+names.sort((a,b)=>a.localeCompare(b));
+(6) ['jim', 'kim', 'rim', 'sim', 'tim', 'vim']
+var products = [{id:1010, name:'Samsung', price:9000}, {id:1001,name:'Nokia', price:7777}, {id:1002, name:'Apple', price:99999}];
+undefined
+products.sort((a,b)=>a.price-b.price);
+(3) [{…}, {…}, {…}]0: {id: 1001, name: 'Nokia', price: 7777}1: {id: 1010, name: 'Samsung', price: 9000}2: {id: 1002, name: 'Apple', price: 99999}length: 3[[Prototype]]: Array(0)
+function anySort(fieldName, type, arr){
+    if(type=='string'){
+         return arr.sort((a,b)=>a[fieldName].localeCompare(b[fieldName]));
+    }
+    arr.sort((a,b)=>a[fieldName]-b[fieldName]);
+}
+undefined
+anySort('price', 'number',products);
+undefined
+function anySort(fieldName, type, arr){
+    if(type=='string'){
+         return arr.sort((a,b)=>a[fieldName].localeCompare(b[fieldName]));
+    }
+    return arr.sort((a,b)=>a[fieldName]-b[fieldName]);
+}
+undefined
+anySort('price', 'number',products);
+(3) [{…}, {…}, {…}]0: {id: 1001, name: 'Nokia', price: 7777}1: {id: 1010, name: 'Samsung', price: 9000}2: {id: 1002, name: 'Apple', price: 99999}length: 3[[Prototype]]: Array(0)
+anySort('name', 'string',products);
+(3) [{…}, {…}, {…}]0: {id: 1002, name: 'Apple', price: 99999}1: {id: 1001, name: 'Nokia', price: 7777}2: {id: 1010, name: 'Samsung', price: 9000}length: 3[[Prototype]]: Array(0)
+function counter(){
+    var count = 0;
+    count++;
+    return count;
+}
+undefined
+counter();
+1
+counter();
+1
+counter();
+1
+var count = 0;
+function counter(){
+    
+    count++;
+    return count;
+}
+undefined
+counter();
+1
+counter();
+2
+counter();
+3
+counter();
+4
+window.count;
+4
+window.count = "Amit";
+'Amit'
+counter();
+NaN
+function init(){
+var count = 0;
+function counter(){
+    
+    count++;
+    return count;
+}
+    return counter;
+}
+undefined
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+var fn = init();
+undefined
+fn();
+1
+var fn2 = (function (){
+var count = 0;
+function counter(){
+    
+    count++;
+    return count;
+}
+    return counter;
+})();
+undefined
+fn2();
+1
+fn2();
+2
+fn2();
+3
+fn2();
+4
+function show(){
+    console.log(i); // undefined
+    for(var i=1; i<=10; i++){
+           console.log(i); 
+    }
+    console.log(i);
+}
+undefined
+show();
+VM6346:2 undefined
+VM6346:4 1
+VM6346:4 2
+VM6346:4 3
+VM6346:4 4
+VM6346:4 5
+VM6346:4 6
+VM6346:4 7
+VM6346:4 8
+VM6346:4 9
+VM6346:4 10
+VM6346:6 11
+undefined
+function show(){
+    console.log(i); // undefined
+    for(let i=1; i<=10; i++){
+           console.log(i); 
+    }
+    console.log(i);
+}
+undefined
+show();
+VM6404:2 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:2:17)
+    at <anonymous>:1:1
+show @ VM6404:2
+(anonymous) @ VM6436:1
+function show(){
+   // console.log(i); // undefined
+    for(let i=1; i<=10; i++){
+           console.log(i); 
+    }
+    console.log(i);
+}
+undefined
+show();
+VM6447:4 1
+VM6447:4 2
+VM6447:4 3
+VM6447:4 4
+VM6447:4 5
+VM6447:4 6
+VM6447:4 7
+VM6447:4 8
+VM6447:4 9
+VM6447:4 10
+VM6447:6 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:6:17)
+    at <anonymous>:1:1
+show @ VM6447:6
+(anonymous) @ VM6470:1
+function show(){
+   // console.log(i); // undefined
+    for(let i=1; i<=10; i++){
+            console.log(z);
+           let z = 90;     
+           console.log(i); 
+    }
+    console.log(i);
+}
+undefined
+show();
+VM6585:4 Uncaught ReferenceError: Cannot access 'z' before initialization
+    at show (<anonymous>:4:25)
+    at <anonymous>:1:1
+show @ VM6585:4
+(anonymous) @ VM6615:1
+function show(){
+    console.log(i); // undefined
+    for(var i=1; i<=10; i++){
+            console.log(z);
+           let z = 90;     
+           console.log(i); 
+    }
+    console.log(i);
+}
+undefined
+show();
+VM6640:2 undefined
+VM6640:4 Uncaught ReferenceError: Cannot access 'z' before initialization
+    at show (<anonymous>:4:25)
+    at <anonymous>:1:1
+show @ VM6640:4
+(anonymous) @ VM6661:1
+function show(){
+    console.log(i); // undefined
+    for(var i=1; i<=10; i++){
+                
+           console.log(i); 
+    }
+    console.log(i);
+}
+undefined
+show();
+VM6701:2 undefined
+VM6701:5 1
+VM6701:5 2
+VM6701:5 3
+VM6701:5 4
+VM6701:5 5
+VM6701:5 6
+VM6701:5 7
+VM6701:5 8
+VM6701:5 9
+VM6701:5 10
+VM6701:7 11
+undefined
+function show(){
+    console.log(i); // undefined
+    (function(){ // i 
+    for(var i=1; i<=10; i++){
+                
+           console.log(i); 
+    }})();
+    console.log(i);
+}
+undefined
+show();
+VM6796:2 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:2:17)
+    at <anonymous>:1:1
+show @ VM6796:2
+(anonymous) @ VM6831:1
+var arr = [100,99, 88,44,22,77];
+undefined
+arr.every(e=>e>=50);
+false

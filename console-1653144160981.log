@@ -1,0 +1,10 @@
+var price = 99934453;
+undefined
+price.toLocaleString('hi-IN');
+'9,99,34,453'
+function cube(num){
+    return num* num * num;
+}
+undefined
+const cube2 = num=>num*num*num;
+undefined
