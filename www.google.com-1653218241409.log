@@ -1,0 +1,16 @@
+document.getElementsByClassName('gb_d');
+HTMLCollection(2) [a.gb_d, a.gb_d]
+document.getElementsByClassName('gb_d')[0];
+<a class=​"gb_d" data-pid=​"23" href=​"https:​/​/​mail.google.com/​mail/​?authuser=0&ogbl" target=​"_top">​Gmail​</a>​
+document.getElementsByClassName('gb_d')[0].innerHTML;
+'Gmail'
+document.getElementsByClassName('gb_d')[0].innerHTML='Yahoo';
+'Yahoo'
+document.getElementsByClassName('gb_d')[0];
+<a class=​"gb_d" data-pid=​"23" href=​"https:​/​/​mail.google.com/​mail/​?authuser=0&ogbl" target=​"_top">​Yahoo​</a>​
+var aTag = document.getElementsByClassName('gb_d')[0];
+undefined
+aTag.href ;
+'https://mail.google.com/mail/?authuser=0&ogbl'
+aTag.href ='https://www.brain-mentors.com';
+'https://www.brain-mentors.com'
