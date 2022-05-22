@@ -1,0 +1,84 @@
+var q;
+undefined
+if(typeof q === 'undefined'){
+    
+}
+undefined
+q = null;
+null
+if(q== null){}
+undefined
+q = NaN;
+NaN
+isNaN(q);
+true
+q;
+NaN
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM513:5 Falsy 
+undefined
+q = 100;
+100
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM540:2 Truthy 
+undefined
+q = null;
+null
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM572:5 Falsy 
+undefined
+q = "Amit";
+'Amit'
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM603:2 Truthy 
+undefined
+q = "";
+''
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM630:5 Falsy 
+undefined
+q = 0;
+0
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM654:5 Falsy 
+undefined
+q = false;
+false
+if(q){
+    console.log("Truthy ");
+}
+else{
+    console.log("Falsy ");
+}
+VM686:5 Falsy 
+undefined

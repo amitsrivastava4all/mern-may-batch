@@ -1,0 +1,71 @@
+function cube(num){
+    for(let i = 1; i<=100000; i++){
+        for(let j = 1; j<=50000; j++){
+            
+        }
+    }
+    let result = num**3;
+    console.log('Result is ',result);
+}
+undefined
+cube(3);
+VM813:8 Result is  27
+undefined
+cube(9);
+VM813:8 Result is  729
+undefined
+var e = {3:27};
+undefined
+e[3];
+27
+var cache = {};
+function cube(num){
+    if(cache[num]){
+        console.log('Result is ', cache[num]);
+        return ; 
+    }
+    for(let i = 1; i<=100000; i++){
+        for(let j = 1; j<=50000; j++){
+            
+        }
+    }
+    let result = num**3;
+    console.log('Result is ',result);
+}
+undefined
+cache;
+{}
+cube(3);
+VM1301:13 Result is  27
+undefined
+cache;
+{}
+var cache = {};
+function cube(num){
+    if(cache[num]){
+        console.log('Result is ', cache[num]);
+        return ; 
+    }
+    for(let i = 1; i<=100000; i++){
+        for(let j = 1; j<=50000; j++){
+            
+        }
+    }
+    let result = num**3;
+    cache[num] = result;
+    console.log('Result is ',result);
+}
+undefined
+cube(3);
+VM1453:14 Result is  27
+undefined
+cache;
+{3: 27}
+cube(5);
+VM1453:14 Result is  125
+undefined
+cache;
+{3: 27, 5: 125}
+cube(3);
+VM1453:4 Result is  27
+undefined
