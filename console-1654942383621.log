@@ -1,0 +1,105 @@
+function whoAmI(){
+    console.log('I am this ', this);
+}
+undefined
+whoAmI(); // window.whoAmI();
+VM252:2 I am this  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var name = 'Amit';
+undefined
+window.name;
+'Amit'
+name; // window.name;
+'Amit'
+function whoAmI(){
+    console.log('I am this ', this.name);
+}
+undefined
+window == this;
+true
+whoAmI(); // window.whoAmI();
+VM467:2 I am this  Amit
+undefined
+var obj  = {
+    //show:function(){}
+    show(){
+       console.log('I am this ', this); 
+    }
+}
+undefined
+obj.show();
+VM739:4 I am this  {show: ƒ}
+undefined
+var obj2 = {name:'Tim'};
+undefined
+whoAmI(); // window.whoAmI();
+VM467:2 I am this  Amit
+undefined
+whoAmI.bind(obj2);
+ƒ whoAmI(){
+    console.log('I am this ', this.name);
+}
+var fn = whoAmI.bind(obj2);
+undefined
+fn();
+VM467:2 I am this  Tim
+undefined
+var obj  = {
+    name:'Kim',
+    //show:function(){}
+    show(){
+       console.log('I am this ', this.name); 
+    }
+}
+undefined
+obj.show();
+VM1013:5 I am this  Kim
+undefined
+obj.show.bind(obj2);
+ƒ show(){
+       console.log('I am this ', this.name); 
+    }
+var fn = obj.show.bind(obj2);
+undefined
+fn();
+VM1013:5 I am this  Tim
+undefined
+fn();
+VM1013:5 I am this  Tim
+undefined
+obj.show();
+VM1013:5 I am this  Kim
+undefined
+obj.show.apply(obj2);
+VM1013:5 I am this  Tim
+undefined
+obj.show.call(obj2);
+VM1013:5 I am this  Tim
+undefined
+var obj  = {
+    name:'Kim',
+    //show:function(){}
+    show(x,y,z){
+       console.log('I am this ', this.name,x,y,z); 
+    }
+}
+undefined
+obj.show.call(obj2,10,20,30)
+    ;
+VM1417:5 I am this  Tim 10 20 30
+undefined
+var arr = [10,20,30];
+obj.show.apply(obj2, arr);
+    ;
+VM1417:5 I am this  Tim 10 20 30
+undefined
+var w = [10,20];
+undefined
+w instanceof Array;
+true
+typeof Array;
+'function'
+typeof Array.prototype;
+'object'
+typeof Array.prototype.forEach;
+'function'

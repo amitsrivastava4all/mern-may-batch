@@ -1,0 +1,61 @@
+var obj = {};
+undefined
+typeof obj;
+'object'
+obj instanceof Object;
+true
+typeof Object;
+'function'
+var obj = {id:1001, name:'Amit'};
+undefined
+obj.id;
+1001
+obj.name;
+'Amit'
+obj['id'];
+1001
+obj[1] = 99;
+99
+obj.1=444;4
+VM356:1 Uncaught SyntaxError: Unexpected number
+obj.1=444;
+VM362:1 Uncaught SyntaxError: Unexpected number
+obj[2] = 5555;
+5555
+obj[2];
+5555
+function createEmp(id, name, salary){
+    var emp = {};
+    emp.id = id;
+    emp.name = name;
+    emp.salary = salary;
+    return emp;
+}
+undefined
+createEmp(1001, 'Ram',9999);
+{id: 1001, name: 'Ram', salary: 9999}
+var ram = createEmp(1001, 'Ram',9999);
+undefined
+ram.id;
+1001
+typeof ram;
+'object'
+ram instanceof Object;
+true
+ram instanceof createEmp;
+false
+function Customer(id, name, balance){
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+}
+var tim = new Customer(1001, "Tim",99999);
+undefined
+tim;
+Customer {id: 1001, name: 'Tim', balance: 99999}
+typeof tim;
+'object'
+tim instanceof Customer;
+true
+tim instanceof Object;
+true
