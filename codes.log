@@ -1,0 +1,161 @@
+console.log("I am Sync 1");
+setTimeout(()=>{
+    console.log("I am Async And Call After Few Sec ");
+}, 5000);
+console.log("I am Sync 2 ");
+const t = setInterval(()=>{
+    console.log("I Call After Interval");
+}, 3000);
+clearInterval(t);
+function getBack(){
+console.log("I am Sync 1");
+setTimeout(()=>{
+    console.log("I am Async And Call After Few Sec ");
+    return " I am Back ";
+}, 5000);
+console.log("I am Sync 2 ");
+}
+
+function getResult(result){
+    console.log('Here is the result ', result);
+}
+function getBack(callBackFn){
+console.log("I am Sync 1");
+setTimeout(()=>{
+    console.log("I am Async And Call After Few Sec ");
+    //return " I am Back ";
+    callBackFn("I am Back ");
+}, 5000);
+console.log("I am Sync 2 ");
+}
+getBack(getResult);
+
+function getPizza(){
+const promise = new Promise((resolve, reject)=>{
+    // Async Code
+    setTimeout(()=>{
+    console.log("I am Async And Call After Few Sec ");
+    resolve(" Pizza is Ready ");
+        //return " I am Back ";
+    
+}, 5000);
+});
+return promise;
+
+}
+
+const p = getPizza();
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+
+function cube(num){
+    var pr = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>7){
+                reject("Some Error ");
+            }
+            resolve(num**3);
+        }, 3000);
+    });
+                         return pr;
+}
+
+const allPromiseResult = Promise.allSettled([cube(3), cube(15), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+const allPromiseResult = Promise.race([cube(3), cube(15), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+
+function cube(num, time = 3000){
+    var pr = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>7){
+                reject("Some Error ");
+            }
+            resolve(num**3);
+        }, time);
+    });
+                         return pr;
+}
+
+const allPromiseResult = Promise.race([cube(3), cube(5,1000), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+
+const allPromiseResult = Promise.any([cube(13), cube(50), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+
+const allPromiseResult = Promise.any([cube(13), cube(50,1000), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+
+const allPromiseResult = Promise.race([cube(13), cube(50,1000), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+const allPromiseResult = Promise.race([cube(13), cube(5,1000), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+const allPromiseResult = Promise.any([cube(13), cube(500), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+const allPromiseResult = Promise.any([cube(3), cube(500), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+function cube(num, time = 3000){
+    var pr = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>7){
+                reject("Some Error ");
+            }
+            resolve(num**3);
+        }, time);
+    });
+                         return pr;
+}
+const allPromiseResult = Promise.all([cube(3), cube(15), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+
+const allPromiseResult = Promise.allSettled([cube(3), cube(15), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+async function total(){
+    var first = await cube(3);
+    var second = await cube(4);
+    var third = await cube(5);
+    console.log(first + second + third);
+}
+total();
+const allPromiseResult = Promise.allSettled([cube(3), cube(15), cube(7)]);
+allPromiseResult.then(result=>console.log(result)).catch(err=>console.log(err));
+
+
+async function total(){
+    var first = await cube(3);
+    var second = await cube(4);
+    var third = await cube(5);
+    //console.log(first + second + third);
+    return first + second + third;
+}
+var p = total();
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+var obj = {id:1001, name:'Ram'};
+obj.id;
+JSON.stringify(obj);
+var r = JSON.stringify(obj);
+typeof r;
+JSON.parse(r);
+document.getElementsByName('q')[0].value = 'AUDI CAR';
+document.forms[0].submit();
